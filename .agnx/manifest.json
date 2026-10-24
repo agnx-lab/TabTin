@@ -1,0 +1,32 @@
+{
+  "id": "tabtin",
+  "name": "TabTin",
+  "version": "0.1.0",
+  "description": "Agnx 外置子应用：TabTin 整仓 + tabtin-web(Vite) 与 tabtin_django(daphne) 组合启动",
+  "engines": {
+    "agnx": ">=1.0.0"
+  },
+  "main": "./dist/index.js",
+  "icon": "./apps/tabtin-web/public/favicon.png",
+  "sidecar": {
+    "supervised": true,
+    "ensureTool": ".agnx/tools/ensure-tabtin-web.mjs",
+    "stateFile": "tabtin-web.json",
+    "defaultPort": 8107
+  },
+  "guest": {
+    "kind": "web",
+    "auth": "none",
+    "capabilities": ["cookies", "websocket"],
+    "preferStrategy": "auto"
+  },
+  "contributes": {
+    "commands": [{ "id": "tabtin.open", "title": "TabTin" }],
+    "panels": [{ "id": "tabtin.main", "title": "TabTin" }]
+  },
+  "platforms": {
+    "desktop": "supported",
+    "web": "supported",
+    "mobile": "unsupported"
+  }
+}

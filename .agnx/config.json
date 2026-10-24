@@ -1,0 +1,10 @@
+{
+  "appId": "tabtin",
+  "installState": "installed",
+  "launchMode": "packaged",
+  "source": {
+    "kind": "github",
+    "url": "https://github.com/tabtin-ai/TabTin"
+  },
+  "updatedAt": "2026-10-19T18:40:00.000Z"
+}
